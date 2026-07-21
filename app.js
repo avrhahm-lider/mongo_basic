@@ -1,10 +1,11 @@
 import express from "express";
 import { MongoClient, ObjectId } from "mongodb";
-
+import dotenv from 'dotenv'
+dotenv.config()
 const app = express();
 app.use(express.json());
 const client = new MongoClient(
-  "mongodb+srv://am500148148_db_user:19h4FEAjGRmsBLl3@cluster0.3p5wroy.mongodb.net/"
+  process.env.URL
 );
 
 try {
