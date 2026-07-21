@@ -11,8 +11,8 @@ const client = new MongoClient(
 try {
   await client.connect();
   console.log("connected");
-} catch {
-  console.log("failed to connect");
+} catch(e) {
+  console.log("failed to connect",e);
 }
 
 const db = client.db("blog");
